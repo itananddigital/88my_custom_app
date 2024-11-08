@@ -137,13 +137,14 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+# my_custom_app/hooks.py
+
+doc_events = {
+    "Sales Invoice": {
+        "on_submit": "my_custom_app.utils.log_queries",
+        "autoname": "my_custom_app.utils.autoname"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
